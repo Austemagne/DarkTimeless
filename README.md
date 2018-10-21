@@ -1,5 +1,4 @@
-=======NOTE========
-Using a CSS editor to "beautify" or "Apply source format" can mass edit the following css to be easier to read.
+NOTE: Using a CSS editor to "beautify" or "Apply source format" can mass edit the following css to be easier to read.
 
 
 /* CSS placed here will affect users of the Timeless skin */
