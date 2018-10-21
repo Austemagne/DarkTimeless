@@ -1,27 +1,7 @@
-==About==
-These style modifications to the Timeless theme are not tested and likely will require more tweaking by each person. The main idea was to isolate the most important styles and give a base to make it easier for others to make such changes to their MediaWiki Timless theme.
+=======NOTE========
+Using a CSS editor to "beautify" or "Apply source format" can mass edit the following css to be easier to read.
 
-==Installation==
-*To install this theme point your MediaWiki site to https://www.example.com/MediaWiki:Timeless.css .
-*Click "Edit".
-*Copy and paste in the CSS from and save the page.
-*Reload and clear the local cache on your MediaWiki.
-	*Firefox / Safari: Hold Shift while clicking Reload, or press either Ctrl-F5 or Ctrl-R (⌘-R on a Mac)
-	*Google Chrome: Press Ctrl-Shift-R (⌘-Shift-R on a Mac)
-	*Internet Explorer: Hold Ctrl while clicking Refresh, or press Ctrl-F5
-	*Opera: Go to Menu → Settings (Opera → Preferences on a Mac) and then to Privacy & security → Clear browsing data → Cached images and files.
-*Once the best background color has been found, it is highly recommended to edit <strong>/install/directory/skins/Timeless/resources/libraries/normalise.css</strong> and replace the first <strong>html</strong>, <strong>background</strong> style to match it and add the same background style to the next entry under the <strong>body</strong>.
 
-==Troubleshooting==
-(1) Make sure the Timeless theme is selected.
-(2) If the site is ran through another caching service, such as CloudFlare, make sure you have cleared that cache.
-
-Note:
-*<em>I am very newbie friendly</em>.
-*The CSS is not sorted for optimal reading although it is not incredibly bad. This is something I will be grateful for some help with.
-*Again, this is something I just finished for the first page of my MediaWiki and I wanted to share it as it is working for me before I go on with a million more tests and mundane edits.
-
-==CSS==
 /* CSS placed here will affect users of the Timeless skin */
 @import url('https://fonts.googleapis.com/css?family=Merriweather');
 html {
