@@ -158,7 +158,7 @@ div.editOptions {
 	padding: 0;
 }
 .mw-wiki-logo {
-	background: url("https://www.anonproject.com/resources/assets/logo.png");
+	background: url("https://www.YOURDOMAIN/logo.png");
 	background-size: contain;
 }
 #mw-header-container {
