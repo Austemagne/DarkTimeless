@@ -1,10 +1,23 @@
-NOTE: Using a CSS editor to "beautify" or "Apply source format" can mass edit the following css to be easier to read.
+/* Timeless skin -- Dark mode */
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
 
+:root {
+	--font-family: 'Noto Serif', 'Roboto Slab', 'Merriweather', serif;
+	--text-shade-1: skyblue;
+	--text-shade-2: dodgerblue;
+	--text-shade-3: royalblue;
+	--bg-shade-0: #000;
+	--bg-shade-0-8: #0008;
+	--bg-shade-1: #181818;
+	--bg-shade-2: #222;
+	--bg-shade-3: #333;
+	--bg-shade-3a: #3a3a3a;
+	--bg-shade-4: #444;
+	--bg-shade-5: #555;
+}
+:root.easyread { --font-family: 'Comic Sans MS', 'Comic Sans', sans; }
 
-/* CSS placed here will affect users of the Timeless skin */
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
 html {
-	background: rgb(0,0,0) !important;
 	height: 100%;
 	font-size: 1.1em;
 	filter: brightness(100%) contrast(100%) grayscale(0%) !important;
@@ -13,109 +26,156 @@ html {
 }
 body {
 	margin: 0;
-	background: #000;
-	color: #ccccff;
-	font-family: 'Merriweather', serif;
+	background-color: var(--bg-shade-1);
+	color: var(--text-shade-1);
+}
+
+
+/* Flow -- Structured discussions */
+
+.flow-post {
+	color: var(--text-shade-1);
+}
+.flow-topic-titlebar {
+	background-color: var(--bg-shade-2);
+	border-radius: 5px;
+	box-shadow: var(--bg-shade-2) 0px 2px 5px 3px;
+	padding: 5px 0;
+}
+.mw-content-ltr .flow-topic-titlebar .flow-topic-titlebar-container, .mw-content-ltr .flow-topic-titlebar .flow-edit-title-form {
+	padding-left: 14px;
+}
+.oo-ui-textInputWidget .oo-ui-inputWidget-input {
+	background-color: var(--bg-shade-3);
+	color: var(--text-shade-1);
+}
+.flow-ui-editorWidget > .flow-ui-editorWidget-editor:not(.oo-ui-pendingElement-pending) {
+	background-color: var(--bg-shade-2) !important; /* override inlined <style> */
+}
+.flow-ui-editorWidget-wikitextHelpLabel {
+	bottom: 50px; /* Hacked positioning depends on font */
+}
+
+
+/* Revision differences */
+
+.diff {
+	border-spacing: 1px;
+}
+.diff-context {
+	color: var(--text-shade-1);
+	background: var(--bg-shade-3a);
+	border-color: transparent;
+}
+.diff-addedline {
+	background-color: darkolivegreen;
+	border-color: limegreen;
+}
+.diff-deletedline {
+	background-color: #710;
+	border-color: red;
+}
+.diff-addedline .diffchange {
+	background: forestgreen;
+	padding-left: 0;
+}
+.diff-addedline .diffchange,
+.diff-deletedline .diffchange {
+	border-radius: 0;
+	padding: 0;
+}
+.diff-deletedline .diffchange {
+	background: #8f0000;
+}
+.diff-addedline, .diff-deletedline, .diff-context {
+	font-size: initial;
+	border-width: 0 0 0 4px;
+}
+.diff td {
+	padding: 0 0.5em;
+}
+.diff td.diff-marker {
+	padding: 0 0.25em;
+}
+
+
+body, .mw-body h1, .mw-body h2, .mw-body h3, .mw-body h4,
+.oo-ui-buttonElement > .oo-ui-buttonElement-button,
+.ve-ui-overlay {
+	font-family: var(--font-family);
 }
 a {
-	color: #cc6600;
+	color: var(--text-shade-2);
 }
 a:hover, a:visited {
-	color: #cc3300;
+	color: var(--text-shade-3);
 }
 h1 {
 	color: white;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 1px 1px 1px var(--bg-shade-0);
 	font-size: 40px !important;
 }
-h1, h2, h3, h4 {
+.mw-body h1, .mw-body h2, .mw-body h3, .mw-body h4 {
 	color: #6699ff;
-	font-family: 'Merriweather', serif;
 }
 #personal .dropdown b {
 	font-weight: normal;
 }
 b, strong {
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 1px 1px 1px var(--bg-shade-0);
 }
 #f-list {
 	text-align: center;
 	font-size: 14px;
 }
 div.editOptions {
-	border: #222;
-	background: #555;
+	border: none;
+	/* background-color: var(--bg-shade-3); */
+	background-color: var(--bg-shade-4);
+}
+.mw-charinsert-buttons {
+	border: none;
 }
 #mw-header-nav-hack {
-	border-top: solid 2px #333;
-	background: #333;
+	border-top: solid 2px var(--bg-shade-3);
+	background-color: var(--bg-shade-3);
 }
-#mw-site-navigation .sidebar-inner {
-	background: #333;
-	border: 0;
-}
+
 @media screen and (min-width: 851px) {
-#p-logo-text a {
-	position: fixed;
-	right: 75vw;
-}
+	#p-logo-text a {
+		position: fixed;
+		right: 75vw;
+	}
 }
 @media screen and (max-width: 850px) {
-#p-logo-text {
-	margin-top: 0;
-}
-}
-@media screen and (max-width: 1099px) and (min-width: 851px) {
-#p-logo-text a.long {
-	padding-left: 7px;
-	float: left;
-	font-size: 26px;
-}
+	#p-logo-text {
+		margin-top: 0;
+	}
 }
 @media screen and (max-width: 1099px) and (min-width: 851px) {
-#mw-related-navigation .sidebar-inner {
-	background: #222 !important;
-	border: solid #111;
+	#p-logo-text a.long {
+		padding-left: 7px;
+		float: left;
+		font-size: 23px !important;
+	}
 }
-}
-@media screen and (max-width: 1099px) and (min-width: 851px) {
-#mw-site-navigation .sidebar-inner {
-	background: #222;
-	border: solid #111;
-}
-}
-#mw-site-navigation .sidebar-chunk {
-	border: outset #222;
-	background: #333;
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-	border-radius: 3px;
-}
-@media screen and (max-width: 851px) {
-#mw-site-navigation .sidebar-chunk {
-	padding: 0 15px 5px 20px;
-}
-}
-@media screen and (max-width: 1099px) and (min-width: 851px) {
-#mw-site-navigation .sidebar-inner {
-	background: #222 !important;
-	border: solid #111 !important;
-}
-}
+
+
 .mw-parser-output a.external {
-	color: #ff9900;
+	color: var(--text-shade-2);
 }
 #searchInput {
 	padding: 0.2em 4.5em 0.2em 2em !important;
 	margin: 0;
 }
 #searchInput-container {
-	background: #333;
+	background-color: var(--bg-shade-3);
 	height: 35px;
 }
 #simpleSearch {
-	border: inset 1px #000;
+	border: inset 1px var(--bg-shade-0);
 	border-radius: 3px;
-	background: #333;
+	background-color: var(--bg-shade-3);
 	height: 35px;
 	width: 48vw;
 	position: absolute;
@@ -127,20 +187,19 @@ div.editOptions {
 }
 #user-tools {
 	position: fixed;
-	right: 86px;
+	/* right: 86px; */
 }
 @media screen and (min-width: 851px) {
-#user-tools {
-	left: 74vw;
-	top: 5px;
-}
+	#user-tools {
+		left: 74vw;
+		top: 5px;
+	}
 }
 .mw-notification {
-	background: #222;
-	border: #111;
-	background: #111;
 	border-radius: 5px;
-	color: #999;
+	border: var(--bg-shade-1);
+	background-color: var(--bg-shade-1);
+	color: var(--text-shade-1);
 	width: 200px;
 }
 .postedit-container {
@@ -157,127 +216,133 @@ div.editOptions {
 	margin: auto;
 	padding: 0;
 }
-.mw-wiki-logo {
-	background: url("https://www.YOURDOMAIN/logo.png");
-	background-size: contain;
-}
+
 #mw-header-container {
-	background: #555;
+	position: sticky;
+	background-color: var(--bg-shade-4);
+	border-bottom: 0.35em solid #186;
+}
+#mw-header-hack {
+	display: none;
+	top: initial;
 }
 #mw-header {
-	width: 100%;
-	max-width: 100%;
+	/* width: 100%; */
+	/* max-width: 100%; */
 	padding: 0;
-	position: static;
+	/* position: static; */
 }
 @media screen and (max-width: 850px) {
-#menus-cover {
-	background: #000;
-}
+	#menus-cover {
+		background-color: var(--bg-shade-0);
+	}
 }
 @media screen and (max-width: 850px) {
-#personal h2 {
-	display: none;
+	#personal h2 {
+		display: none;
+	}
 }
+.mw-wiki-logo {
+	background-size: contain;
 }
 #mw-content-container {
-	background: #1d1d16;
+	background: initial;
+	margin-top: 0;
 }
 @media screen and (max-width: 850px) {
-#mw-content-block {
-	background: #000;
-}
-}
-@media screen and (max-width: 850px) {
-#site-tools h2 {
-	right: 3em;
-	top: 0.9em;
-	padding-bottom: 5px;
-}
+	#mw-content-block {
+		background-color: var(--bg-shade-1);
+	}
 }
 @media screen and (max-width: 850px) {
-#p-logo-text a.long {
-	width: 100%;
-	top: 7px;
-	text-align: center;
-	font-size: 40px !important;
+	#site-tools h2 {
+		right: 3em;
+		top: 0.9em;
+		padding-bottom: 5px;
+	}
 }
+@media screen and (max-width: 850px) {
+	#p-logo-text a.long {
+		width: 100%;
+		top: 7px;
+		text-align: center;
+		font-size: 40px !important;
+	}
 }
 @media screen and (min-width: 851px) {
-#p-logo-text {
-	width: 29em;
-}
+	#p-logo-text {
+		width: 29em;
+	}
 }
 @media screen and (min-width: 851px) {
-#personal h2:after {
-	width: 36px;
-}
+	#personal h2:after {
+		width: 36px;
+	}
 }
 @media screen and (max-width: 850px) {
-#p-logo-text {
-	position: static;
-	left: 0 !important;
-	right: 0;
-	margin-left: 0;
-	margin-right: 0;
-	width: 100%;
-	top: 3.3em;
+	#p-logo-text {
+		position: static;
+		left: 0 !important;
+		right: 0;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		top: 3.3em;
+	}
 }
-}
- @media only screen and (min-width: 992px) and (max-width:768p) {
- #p-logo-text {
- right:74vw;
-}
+@media only screen and (min-width: 992px) and (max-width:768px) {
+	#p-logo-text {
+		right:74vw;
+	}
 }
 @media only screen and (min-width: 900px) and (max-width:100px) {
-#p-logo-text {
-	right: 74vw;
-	top: 3em;
+	#p-logo-text {
+		right: 74vw;
+		top: 3em;
+	}
 }
-}
-@media screen and (max-width: 900) and (min-width: 100px) {
-#p-logo-text a.long {
-	font-size: 43px !important;
-}
+@media screen and (max-width: 900px) and (min-width: 100px) {
+	#p-logo-text a.long {
+		font-size: 43px !important;
+	}
 }
 @media screen and (max-width: 1700px) and (min-width: 800px) {
-#p-logo-text {
-	left: 12px !important;
+	#p-logo-text {
+		left: 12px !important;
+	}
 }
-}
-@media screen and (max-width: 1700px) and (mix: 851px) {
-#mw-site-navigation {
-	background: #000;
-}
+@media screen and (max-width: 1700px) and (min-width: 851px) {
+	#mw-site-navigation {
+		background-color: var(--bg-shade-0);
+	}
 }
 #mw-content {
-	background: #333;
-	border: solid #946c20;
-	-webkit-border-bottom-right-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-bottomright: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
+	background-color: var(--bg-shade-3);
+	border: none;
+	border-radius: 0px 0px 4px 4px;
 }
 #mw-page-header-links li.selected a {
 	color: #cccc00;
 }
+
+
+/* Navbar */
+#mw-site-navigation .sidebar-chunk,
 #mw-related-navigation .sidebar-chunk {
-	background: #333;
-	border: outset #222;
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-	border-radius: 3px;
+	padding-bottom: 1px; /* To avoid collapsing margin-bottom of last link with the margin outside the box-shadow */
+	border: none;
+	border-radius: 8px;
+	background-color: var(--bg-shade-3);
+	box-shadow: 0 3px 8px 4px var(--bg-shade-0-8);
 }
 @media screen and (max-width: 1099px) and (min-width: 851px) {
-#mw-related-navigation .sidebar-chunk {
-	background: #333;
-	border: outset #222;
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-	border-radius: 3px;
-	padding: 0 15px 5px 20px;
+	#mw-site-navigation .sidebar-chunk,
+	#mw-related-navigation .sidebar-chunk {
+		padding: 0 15px 5px 20px;
+	}
 }
-}
+
+
 .color-middle-container, .ts-inner {
 	padding: 0;
 }
@@ -287,8 +352,8 @@ div.editOptions {
 #p-logo-text a.long {
 	padding-top: 5px;
 	padding-left: 6px;
-	font-size: 23px;
-	text-shadow: 1px 1px 1px #222;
+	font-size: 30px;
+	text-shadow: 1px 1px 1px var(--bg-shade-2);
 }
 #p-search {
 	width: 70em;
@@ -298,76 +363,212 @@ div.editOptions {
 	line-height: 25px;
 }
 #personal h2 {
-	text-shadow: 2px 2px 0 #333;
+	text-shadow: 2px 2px 0 var(--bg-shade-3);
 	padding-top: 7px;
 	font-size: 24px;
-	text-transform: lowercase;
 }
 #personal .dropdown {
-	background: #222!important;
-	border: solid #000;
+	background-color: var(--bg-shade-2) !important;
+	border: solid var(--bg-shade-1);
+}
+#personal .dropdown:before,
+#personal .dropdown:after {
+	border-bottom-color: var(--bg-shade-1);
 }
 .codeEditor-status {
 	color: #000;
-}
-.oo-ui-labelElement-label {
-	text-shadow: 1px 2px #333;
 }
 #iframeframe {
 	height: 700px;
 }
 #wpSave {
-	text-shadow: 2px 2px 2px #000 !important
+	text-shadow: 2px 2px 2px var(--bg-shade-0) !important;
 }
 #mw-footer-container {
-	background: #000;
+	background-color: var(--bg-shade-3);
 	padding-top: 1em;
 }
-fieldset {
-	background: #222!important;
-	border: solid #111;
-}
-input {
-	background: #333;
-	border: solid 1px #111!important;
-	border-radius: 2px;
-	padding-left: 5px;
-	color: #999;
-}
+
+
 .mw-ui-button.mw-ui-progressive, .mw-ui-button.mw-ui-progressive:active, .mw-ui-button.mw-ui-progressive.mw-ui-checked, input[type='submit'], input[type='button'], button {
-	border: solid 1px #333!important;
-	border-bottom: 0!important;
-	text-shadow: 0 0 0 #000 !important;
-	border-bottom: solid 1px #333!important;
+	border: solid 1px var(--bg-shade-3) !important;
+	text-shadow: 0 0 0 var(--bg-shade-0) !important;
 }
 .oo-ui-flaggedElement-destructive {
-	background: #111;
-	border: 1px solid #444;
-	color: #FF333 !important;
+	background-color: var(--bg-shade-1);
+	border: 1px solid var(--bg-shade-1);
+	color: var(--text-shade-2);
 	padding-left: 15px !important;
 	padding-right: 15px !important;
 }
 .oo-ui-flaggedElement-destructive:hover {
-	background: #222;
-	color: #CC0000 !important;
+	background-color: var(--bg-shade-5);
 }
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+	background-color: var(--bg-shade-4);
+	color: var(--text-shade-2);
+}
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+}
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+	background-color: var(--bg-shade-5);
+	color: var(--text-shade-2);
+}
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+	background-color: initial;
+}
+
 #searchInput {
 	border: 0!important;
 }
 @media screen and (max-width: 850px) {
-#searchInput {
-	padding: 0 0 0 6px !important;
+	#searchInput {
+		padding: 0 0 0 6px !important;
+	}
 }
+
+
+/* Input widgets */
+
+fieldset {
+	/* background-color: var(--bg-shade-3) !important; */
+	border: solid var(--bg-shade-1);
 }
-.oo-ui-textInputWidget input, .oo-ui-textInputWidget textarea {
-	background-color: #333;
-	color: #fff;
+input {
+	background-color: var(--bg-shade-3);
+	border: solid 1px var(--bg-shade-1) !important;
+	border-radius: 2px;
+	padding-left: 5px;
+	color: var(--text-shade-2);
+}
+
+.oo-ui-labelElement-label {
+	color: var(--text-shade-2);
+	text-shadow: 1px 2px var(--bg-shade-3);
+}
+.oo-ui-textInputWidget input, .oo-ui-textInputWidget textarea,
+.mw-widget-dateInputWidget-handle {
+	background-color: var(--bg-shade-4);
+	color: var(--text-shade-2);
 }
 .oo-ui-textInputWidget > .oo-ui-labelElement-label {
 	line-height: 0.5em;
 }
+
+.mw-widget-dateInputWidget-calendar,
+.oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
+	background-color: var(--bg-shade-4);
+}
+.oo-ui-dropdownInputWidget.oo-ui-widget-enabled:hover {
+	background-color: var(--bg-shade-5);
+}
+.oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
+	/* background-color: var(--bg-shade-4); */
+	background-color: initial;
+	color: var(--text-shade-2);
+}
+.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {
+	/* background-color: var(--bg-shade-5); */
+}
+
+.mw-widget-calendarWidget-day {
+	color: var(--text-shade-1);
+}
+.mw-widget-calendarWidget-day-additional {
+	color: var(--text-shade-3);
+}
+
+.oo-ui-menuSelectWidget {
+	background-color: var(--bg-shade-4);
+	color: var(--text-shade-2);
+}
+.oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget {
+	color: var(--text-shade-1);
+}
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
+.oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget-selected {
+	background-color: initial;
+	color: var(--text-shade-1);
+}
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget-highlighted {
+	background-color: var(--bg-shade-5);
+	/* color: var(--text-shade-1); */
+}
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-pressed.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
+	background-color: var(--bg-shade-5);
+	/* color: var(--text-shade-2); */
+}
+
+
+
+/* Editor */
+.oo-ui-windowManager-modal > .oo-ui-dialog {
+	background-color: var(--bg-shade-0-8);
+}
+.ve-ui-mwSaveDialog-options {
+	background-color: initial;
+	border: none;
+}
+.oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame {
+	background-color: var(--bg-shade-4);
+}
+.oo-ui-toolbar-bar {
+	background-color: var(--bg-shade-4);
+	/* background-color: var(--bg-shade-5); */
+	color: var(--text-shade-1);
+}
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active,
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active:focus,
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button,
+.oo-ui-processDialog-actions-safe .oo-ui-widget-enabled.oo-ui-iconElement:not(.oo-ui-labelElement) > .oo-ui-buttonElement-button:hover,
+.oo-ui-popupWidget-popup,
+.oo-ui-outlineOptionWidget.oo-ui-optionWidget-selected,
+.oo-ui-outlineOptionWidget.oo-ui-optionWidget-highlighted,
+.oo-ui-popupToolGroup.oo-ui-popupToolGroup-active > .oo-ui-popupToolGroup-handle,
+.oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover,
+.oo-ui-listToolGroup-tools .oo-ui-tool.oo-ui-widget-enabled:hover,
+.oo-ui-menuToolGroup-tools .oo-ui-tool.oo-ui-tool-active,
+.oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:active, .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:active:focus,
+.oo-ui-tool.oo-ui-widget-enabled.oo-ui-tool-active > .oo-ui-tool-link,
+.oo-ui-tool.oo-ui-widget-enabled.oo-ui-popupToolGroup-active > .oo-ui-tool-link,
+.oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:hover {
+	background-color: var(--bg-shade-5);
+	color: var(--text-shade-1);
+}
+.oo-ui-toolbar-tools  .oo-ui-labelElement-label {
+	/* color: var(--text-shade-1); */
+	color: var(--bg-shade-0);
+}
+.oo-ui-toolbar-position-top > .oo-ui-toolbar-bar {
+	border-bottom: 1px solid var(--bg-shade-2);
+	/* border-bottom: none; */
+	/* box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1); */
+}
+.oo-ui-toolGroup {
+	border-right: 1px solid var(--bg-shade-3);
+}
+.oo-ui-toolbar-actions .oo-ui-toolGroup {
+	border-left: 1px solid var(--bg-shade-3);
+}
+.oo-ui-popupToolGroup-tools {
+	background-color: var(--bg-shade-4);
+	color: var(--text-shade-1);
+}
+.oo-ui-popupToolGroup-tools .oo-ui-tool-active.oo-ui-widget-enabled .oo-ui-tool-link .oo-ui-tool-title,
+.oo-ui-listToolGroup-tools .oo-ui-tool-active.oo-ui-widget-enabled .oo-ui-tool-link .oo-ui-tool-title {
+	color: var(--text-shade-2);
+}
+.oo-ui-processDialog-actions-primary .oo-ui-buttonElement.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
+	color: white;
+}
+
+
+
 #pagehistory li.selected {
-	background-color: #555;
+	background-color: var(--bg-shade-5);
 }
 .warningbox {
 	background: #1d1d16;
@@ -402,18 +603,16 @@ a.new:hover, .new a:hover, a.new:visited, .new a:visited {
 	float: left;
 	left: 25px;
 }
-.diff-addedline .diffchange {
-	background: #1d1d16;
-	padding-left: 7px;
-}
+
+
 .oo-ui-buttonElement.oo-ui-labelElement > input.oo-ui-buttonElement-button, .oo-ui-buttonElement.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
-	text-shadow: 0 0 0 #000 !important;
+	text-shadow: 0 0 0 var(--bg-shade-0) !important;
 }
 .oo-ui-labelElement-label {
-	text-shadow: 0 0 0 #000
+	text-shadow: 0 0 0 var(--bg-shade-0);
 }
 .oo-ui-panelLayout-expanded {
-	background: #222;
+	background-color: var(--bg-shade-2);
 }
 .oo-ui-messageDialog-message {
 	color: #999;
@@ -422,30 +621,30 @@ a.new:hover, .new a:hover, a.new:visited, .new a:visited {
 	color: #999;
 }
 .oo-ui-messageDialog-actions-horizontal .oo-ui-actionWidget {
-	border-right: 1px solid #111
+	border-right: 1px solid var(--bg-shade-1);
 }
 .oo-ui-dialog-content > .oo-ui-window-body {
-	outline: 1px solid #111;
+	outline: 1px solid var(--bg-shade-1);
 }
 .oo-ui-messageDialog-content > .oo-ui-window-foot {
-	outline: 1px solid #111;
+	outline: 1px solid var(--bg-shade-1);
 }
 .wikiEditor-ui .wikiEditor-ui-view {
-	border: 1px solid #000;
+	border: 1px solid var(--bg-shade-0);
 }
 .wikiEditor-ui .wikiEditor-ui-top {
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid var(--bg-shade-0);
 }
 textarea[style] {
-	background: #111 !important;
+	background-color: var(--bg-shade-1) !important;
 	color: #fff;
 }
 pre, .mw-code {
-	background: #222;
+	background-color: var(--bg-shade-2);
 	color: #B0B0B0;
 	border: 1px solid #444;
 }
 .oo-ui-iconWidget.oo-ui-iconElement.oo-ui-iconElement-icon {
 	background-color: #B0B0B0;
-	border: 1px solid #333;
+	border: 1px solid var(--bg-shade-3);
 }
