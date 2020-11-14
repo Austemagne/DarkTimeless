@@ -1,0 +1,9 @@
+/* Code editing colors */
+.mi, .mh, .kp, .kc { color: #eee !important;} 
+.p, .o { color: #aaa!important;} 
+.k, .ki, .mt { color: lightgreen!important;}
+.nc, .nt { color: skyblue!important;}
+.c { color: #D6C6DE !important;}
+.cp { color: #EEE8AA !important; }
+.nb, .nn {color: #f5b561 !important;}
+.nd {color: #FF4545 !important ;}
