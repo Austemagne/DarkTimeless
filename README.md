@@ -138,7 +138,6 @@ div.editOptions {
 .mw-notification {
 	background: #222;
 	border: #111;
-	background: #111;
 	border-radius: 5px;
 	color: #999;
 	width: 200px;
@@ -235,7 +234,7 @@ div.editOptions {
 	top: 3em;
 }
 }
-@media screen and (max-width: 900) and (min-width: 100px) {
+@media screen and (max-width: 900px) and (min-width: 100px) {
 #p-logo-text a.long {
 	font-size: 43px !important;
 }
