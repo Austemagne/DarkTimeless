@@ -2,7 +2,6 @@ NOTE: Using a CSS editor to "beautify" or "Apply source format" can mass edit th
 
 
 /* CSS placed here will affect users of the Timeless skin */
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
 html {
 	background: rgb(0,0,0) !important;
 	height: 100%;
@@ -15,7 +14,6 @@ body {
 	margin: 0;
 	background: #000;
 	color: #ccccff;
-	font-family: 'Merriweather', serif;
 }
 a {
 	color: #cc6600;
@@ -30,7 +28,6 @@ h1 {
 }
 h1, h2, h3, h4 {
 	color: #6699ff;
-	font-family: 'Merriweather', serif;
 }
 #personal .dropdown b {
 	font-weight: normal;
