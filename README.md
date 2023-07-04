@@ -224,7 +224,7 @@ div.editOptions {
 	top: 3.3em;
 }
 }
- @media only screen and (min-width: 992px) and (max-width:768p) {
+ @media only screen and (min-width: 992px) and (max-width:768px) {
  #p-logo-text {
  right:74vw;
 }
@@ -343,7 +343,7 @@ input {
 .oo-ui-flaggedElement-destructive {
 	background: #111;
 	border: 1px solid #444;
-	color: #FF333 !important;
+	color: #FF3333 !important;
 	padding-left: 15px !important;
 	padding-right: 15px !important;
 }
